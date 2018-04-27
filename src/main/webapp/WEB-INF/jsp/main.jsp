@@ -74,7 +74,7 @@
                 <div id="modalDialogContent"></div>
             </div>
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
-                <p>Some text here</p>
+                <p>Some footer text here</p>
             </footer>
             <!--
             <div class="row align-items-center">
@@ -99,11 +99,11 @@
         <script src="js/custom.js"></script>
 
         <script type="text/javascript">
-                            $(document).ready(function () {
-                                console.log("ready!");
-                            });
+            $(document).ready(function () {
+                console.log("ready!");
+            });
 
-                            Holder.addTheme("thumbnail", {bg: "#fff", text: "Thumbnail"});
+            Holder.addTheme("thumbnail", {bg: "#fff", text: "Thumbnail"});
         </script>
     </body>
 </html>
