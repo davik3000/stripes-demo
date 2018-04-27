@@ -1,10 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="http://stripes.sourceforge.net/stripes.tld" %>
 
-<div class="modal-dialog" role="document">
+<div id="modalDialogContent" class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5>${actionBean.title}</h5>
+            <h5>Title: ${actionBean.title}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>

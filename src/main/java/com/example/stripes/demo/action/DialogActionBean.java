@@ -5,6 +5,7 @@
  */
 package com.example.stripes.demo.action;
 
+import java.io.StringReader;
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.action.DefaultHandler;

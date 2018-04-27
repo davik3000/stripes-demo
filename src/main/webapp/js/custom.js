@@ -5,22 +5,25 @@
  */
 console.log("Loading custom.js");
 
-function executeAjax(component){
+function executeAjax(component) {
     var id = $(component).data("href");
     console.log("executing Ajax call on " + id);
     var url = "http://localhost:8080/stripes-demo/Dialog.action";
-    var params = "id="+$(component).data("href");
-    
-    
-    
-    ajaxGet(url, params, myAjaxDoneCallback, myAjaxErrorCallback);
+    var params = "id=" + id;
+
+    // ajaxGet(url, params, myAjaxDoneCallback, myAjaxErrorCallback);
+    ajaxPost(url, params, myAjaxDoneCallback, myAjaxErrorCallback);
 }
 
 function myAjaxDoneCallback(result) {
     console.log('Success!');
-//    console.log(result);
-    $('#modalDialogContent').replaceWith(result);
-    $('#modalDialog').modal('show');
+    console.log('Here the result: ' + result);
+
+    var contentSelector = $('#modalDialogContent');
+    var dialogSelector = $('#modalDialog');
+
+    contentSelector.replaceWith(result);
+    dialogSelector.modal('show');
 }
 
 function myAjaxErrorCallback(xhr, status, errorThrown) {
@@ -52,14 +55,14 @@ function ajaxGet(url, params, doneCallback, errorCallback) {
         dataType: "text",
         data: params,
         statusCode: {
-            404: function() {
-                alert( "page not found" );
+            404: function () {
+                alert("page not found");
             }
         }
     })
             .done(doneCallback)
             .fail(errorCallback)
-            .always(function(xhr, status) {
+            .always(function (xhr, status) {
                 console.log("Request complete");
-    });
+            });
 }
